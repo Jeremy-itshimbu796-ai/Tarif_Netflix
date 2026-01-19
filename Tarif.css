@@ -1,99 +1,153 @@
-/* RESET */
-* {
-  box-sizing: border-box;
-}
+/* =========================
+       RESET
+    ========================= */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-  margin: 0;
-  padding: 20px;
-  font-family: "Times New Roman", Times, serif;
-  background: linear-gradient(90deg, #000000, #ff0000);
-  text-align: center;
-  color: white;
-}
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background: linear-gradient(90deg, #000000, #ff0000);
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
 
-/* TITRE */
-h1 {
-  text-decoration: underline;
-  margin-bottom: 40px;
-}
+    /* TITRE */
+    h1 {
+      text-decoration: underline;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
 
-/* GRID RESPONSIVE */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  max-width: 1200px;
-  margin: auto;
-}
+    /* BOUTON HOME */
+    .page1 {
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 20px;
+      background: linear-gradient(90deg, #000000, #ff0000);
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      margin-bottom: 30px;
+      display: inline-block;
+    }
 
-/* CARDS */
-.card {
-  background-color: aliceblue;
-  color: black;
-  border-radius: 12px;
-  padding: 30px 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
+    .page1:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #ff0000;
+    }
 
-.card:hover {
-  transform: translateY(-8px);
-}
+    /* GRID RESPONSIVE */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-.card h2 {
-  margin-bottom: 10px;
-}
+    /* CARDS */
+    .card {
+      background-color: aliceblue;
+      color: black;
+      border-radius: 12px;
+      padding: 30px 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
 
-/* PRICE */
-.price {
-  font-size: 28px;
-  font-weight: bold;
-  margin: 15px 0;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #000000, #ff0000);
-  display: inline-block;
-}
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(255,0,0,0.5);
+    }
 
-/* LIST */
-.card ul {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-}
+    .card h2 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
 
-.card ul li {
-  margin-bottom: 8px;
-}
+    /* PRICE */
+    .price {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 15px 0;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      background: linear-gradient(90deg, #000000, #ff0000);
+      display: inline-block;
+    }
 
-/* BUTTONS */
-.but, .page1 {
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #000000, #ff0000);
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
+    .price span {
+      font-size: 16px;
+      font-weight: normal;
+    }
 
-.but:hover, .page1:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #ff0000;
-}
+    /* LIST */
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      text-align: left;
+    }
 
-/* MOBILE EXTRA */
-@media (max-width: 480px) {
-  body {
-    padding: 10px;
-  }
+    .card ul li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+    }
 
-  h1 {
-    font-size: 1.6rem;
-  }
-}
+    .card ul li::before {
+      content: '✔';
+      color: #2ecc71;
+      margin-right: 10px;
+    }
 
+    .card ul li.unavailable::before {
+      content: '✘';
+      color: #e74c3c;
+    }
+
+    /* BUTTONS */
+    .but {
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 20px;
+      background: linear-gradient(90deg, #000000, #ff0000);
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .but:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #ff0000;
+    }
+
+    /* MOBILE EXTRA */
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .card ul li {
+        font-size: 0.9rem;
+      }
+
+      .price {
+        font-size: 22px;
+      }
+    }
