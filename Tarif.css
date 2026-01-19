@@ -1,95 +1,109 @@
-h1{
-    color: rgb(255, 255, 255);
-    text-decoration: underline;
-}
-body{
-    /*background-color: rgb(184, 184, 184);*/
-    background: linear-gradient(90deg, #000000, #ff0000);
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 0.5cm;
-}
-.flexbox{
-    display: flex;
-    justify-content: center;
-    margin-block-start: 30px;
+/* RESET & BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  background: linear-gradient(90deg, #000000, #ff0000);
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(14px, 2.5vw, 18px);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* TITRES */
+h1 {
+  color: white;
+  text-decoration: underline;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  margin-bottom: 20px;
+}
+
+/* FLEXBOX CONTAINER */
+.flexbox {
+  display: flex;
+  flex-wrap: wrap; /* IMPORTANT */
+  justify-content: center;
+  gap: 30px;
+  padding: 30px 15px;
+}
+
+/* CARD */
 .card {
-    background-color: aliceblue;
-    border-radius: 10px;
-    inline-size: 250px;
-    padding: 30px 20px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    margin: 50px;
+  background-color: aliceblue;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 280px;
+  padding: 30px 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
 }
 
-.card h2{
-    font-size: 0.55cm;
-    color: rgb(0, 0, 0);
+.card:hover {
+  transform: translateY(-6px);
 }
 
-.card ul{
-    list-style-type: none;
+.card h2 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: black;
+  margin-bottom: 15px;
 }
+
+.card ul {
+  list-style: none;
+  color: black;
+  font-size: 0.95rem;
+}
+
+/* PRICE */
 .price {
-  font-size: 28px;
+  font-size: clamp(1.2rem, 4vw, 1.7rem);
   font-weight: bold;
   margin: 15px 0;
   color: white;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 20px;
   display: inline-block;
   background: linear-gradient(90deg, #000000, #ff0000);
 }
 
+/* BUTTONS */
+button,
 .but {
-  font-size: 28px;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   font-weight: bold;
   margin: 15px 0;
   color: white;
-  padding: 10px;
+  padding: 12px 22px;
   border-radius: 20px;
   display: inline-block;
-  background: linear-gradient(90deg, #000000, #ff0000); 
-
+  background: linear-gradient(90deg, #000000, #ff0000);
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  min-height: 44px; /* touch friendly */
 }
 
+button:hover,
 .but:hover {
+  transform: scale(1.05);
   box-shadow: 0 0 10px #000000, 0 0 20px #ff0000;
 }
-button{
-  font-size: 28px;
-  font-weight: bold;
-  margin: 15px 0;
-  color: white;
-  padding: 10px;
-  border-radius: 20px;
-  display: inline-block;
-  background: linear-gradient(90deg, #000000, #ff0000); 
 
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-.page1:hover {
-  box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
-
-}
-
+/* HERO SECTION */
 .hero {
   min-height: 100vh;
-  padding: 80px 0;
+  padding: 80px 20px;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
+  align-items: center;
 }
 
 .hero-img {
@@ -103,13 +117,14 @@ button{
   height: auto;
 }
 
+/* DESKTOP */
 @media (min-width: 900px) {
   .hero-grid {
     grid-template-columns: 1.2fr 0.8fr;
-    align-items: center;
   }
 
   .hero-img {
     justify-content: flex-end;
   }
 }
+
