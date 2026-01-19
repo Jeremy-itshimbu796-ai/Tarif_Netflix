@@ -170,3 +170,41 @@
       }
     }
 
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+@media (max-width: 480px) {
+  .pricing-grid {
+    grid-template-columns: 1fr; /* Une carte par ligne */
+    gap: 15px; /* moins d’espace entre les cartes */
+  }
+
+  .card {
+    padding: 20px 15px; /* moins de padding pour rentrer sur l’écran */
+    margin: 0 auto; /* centrer la carte */
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .card h2 {
+    font-size: 1.3rem;
+  }
+
+  .price {
+    font-size: 22px;
+  }
+
+  .card ul li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .but {
+    width: 100%; /* bouton pleine largeur */
+    font-size: 16px;
+    padding: 10px 0;
+  }
+}
+
