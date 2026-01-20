@@ -1,185 +1,194 @@
 /* =========================
-   RESET & BASE
+   RESET & VARIABLES
 ========================= */
-* {
+:root {
+  --primary: #ff0000;
+  --dark: #000000;
+  --light: #ffffff;
+  --card-bg: aliceblue;
+  --radius: 16px;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: "Times New Roman", Times, serif;
-  background: linear-gradient(90deg, #000000, #ff0000);
+  font-family: "Segoe UI", "Times New Roman", Times, serif;
+  background: linear-gradient(90deg, var(--dark), var(--primary));
+  color: var(--light);
+  min-height: 100vh;
+  padding: clamp(10px, 4vw, 30px);
   text-align: center;
-  color: white;
-  padding: 20px;
 }
 
-/* TITRE */
+/* =========================
+   TITRE
+========================= */
 h1 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  margin-bottom: clamp(20px, 4vw, 40px);
   text-decoration: underline;
-  margin-bottom: 40px;
-  font-size: 2rem;
 }
 
-/* BOUTON HOME */
+/* =========================
+   BOUTON HOME
+========================= */
 .page1 {
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #000000, #ff0000);
+  display: inline-block;
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: 600;
+  color: var(--light);
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, var(--dark), var(--primary));
   border: none;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  margin-bottom: 30px;
-  display: inline-block;
+  margin-bottom: 35px;
+  transition: all 0.3s ease;
 }
 
 .page1:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #ff0000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.5);
 }
 
-/* GRID RESPONSIVE */
+/* =========================
+   GRID RESPONSIVE
+========================= */
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(15px, 3vw, 30px);
   max-width: 1200px;
   margin: auto;
 }
 
-/* CARDS */
+/* =========================
+   CARDS
+========================= */
 .card {
-  background-color: aliceblue;
-  color: black;
-  border-radius: 12px;
-  padding: 30px 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
+  background-color: var(--card-bg);
+  color: #000;
+  border-radius: var(--radius);
+  padding: clamp(20px, 4vw, 35px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 25px rgba(255,0,0,0.5);
+  box-shadow: 0 15px 35px rgba(255, 0, 0, 0.4);
 }
 
 .card h2 {
-  margin-bottom: 10px;
-  font-size: 1.5rem;
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+  margin-bottom: 12px;
 }
 
-/* PRICE */
+/* =========================
+   PRIX
+========================= */
 .price {
-  font-size: 28px;
-  font-weight: bold;
-  margin: 15px 0;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #000000, #ff0000);
   display: inline-block;
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: bold;
+  color: var(--light);
+  margin: 18px 0;
+  padding: 10px 26px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, var(--dark), var(--primary));
 }
 
 .price span {
-  font-size: 16px;
+  font-size: 0.9rem;
   font-weight: normal;
 }
 
-/* LIST */
+/* =========================
+   LISTE
+========================= */
 .card ul {
   list-style: none;
-  padding: 0;
-  margin: 20px 0;
+  margin: 22px 0;
   text-align: left;
 }
 
 .card ul li {
-  margin-bottom: 10px;
-  font-size: 1rem;
   display: flex;
   align-items: center;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  margin-bottom: 12px;
 }
 
 .card ul li::before {
-  content: '✔';
+  content: "✔";
   color: #2ecc71;
   margin-right: 10px;
+  font-weight: bold;
 }
 
 .card ul li.unavailable::before {
-  content: '✘';
+  content: "✘";
   color: #e74c3c;
 }
 
-/* BUTTONS */
+/* =========================
+   BOUTONS ACTION
+========================= */
 .but {
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #000000, #ff0000);
+  width: 100%;
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: 600;
+  color: var(--light);
+  padding: 12px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, var(--dark), var(--primary));
   border: none;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  width: 100%;
+  transition: all 0.3s ease;
 }
 
 .but:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #ff0000;
+  transform: scale(1.04);
+  box-shadow: 0 0 18px rgba(255, 0, 0, 0.6);
 }
 
 /* =========================
    MOBILE OPTIMIZATION
 ========================= */
 @media (max-width: 480px) {
-  body {
-    padding: 10px;
-  }
-
-  h1 {
-    font-size: 1.6rem;
-  }
-
-  .pricing-grid {
-    grid-template-columns: 1fr; /* une carte par ligne */
-    gap: 15px;
+  .page1 {
+    width: 100%;
   }
 
   .card {
-    padding: 20px 15px;
     margin: 0 auto;
   }
 
-  .card h2 {
-    font-size: 1.3rem;
-  }
-
-  .price {
-    font-size: 22px;
+  .card ul {
+    text-align: center;
   }
 
   .card ul li {
-    font-size: 0.9rem;
-    margin-bottom: 12px;
-  }
-
-  .but {
-    font-size: 16px;
-    padding: 10px 0;
+    justify-content: center;
   }
 }
 
-/* DISABLE HOVER EFFECT ON TOUCH DEVICES */
+/* =========================
+   TOUCH DEVICES
+========================= */
 @media (hover: none) {
-  .card:hover {
+  .card:hover,
+  .but:hover,
+  .page1:hover {
     transform: none;
-    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    box-shadow: none;
   }
 }
+
 
