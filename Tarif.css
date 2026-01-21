@@ -1,194 +1,139 @@
 /* =========================
-   RESET & VARIABLES
+   RESET
 ========================= */
-:root {
-  --primary: #ff0000;
-  --dark: #000000;
-  --light: #ffffff;
-  --card-bg: aliceblue;
-  --radius: 16px;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+* {
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: "Segoe UI", "Times New Roman", Times, serif;
-  background: linear-gradient(90deg, var(--dark), var(--primary));
-  color: var(--light);
-  min-height: 100vh;
-  padding: clamp(10px, 4vw, 30px);
-  text-align: center;
+  box-sizing: border-box;
 }
 
 /* =========================
-   TITRE
+   BASE MOBILE FIRST
 ========================= */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(90deg, #000, #ff0000);
+  color: white;
+  padding: 12px;
+}
+
+/* TITRE */
 h1 {
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  margin-bottom: clamp(20px, 4vw, 40px);
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 20px 0 30px;
   text-decoration: underline;
 }
 
-/* =========================
-   BOUTON HOME
-========================= */
+/* BOUTON HOME */
 .page1 {
-  display: inline-block;
-  font-size: clamp(16px, 2vw, 18px);
-  font-weight: 600;
-  color: var(--light);
-  padding: 12px 28px;
-  border-radius: 30px;
-  background: linear-gradient(90deg, var(--dark), var(--primary));
-  border: none;
-  cursor: pointer;
-  margin-bottom: 35px;
-  transition: all 0.3s ease;
-}
-
-.page1:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.5);
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(90deg, #000, #ff0000);
+  color: white;
+  padding: 12px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 25px;
 }
 
 /* =========================
-   GRID RESPONSIVE
+   GRID MOBILE (1 COLONNE)
 ========================= */
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(15px, 3vw, 30px);
-  max-width: 1200px;
-  margin: auto;
+  grid-template-columns: 1fr;
+  gap: 18px;
 }
 
 /* =========================
    CARDS
 ========================= */
 .card {
-  background-color: var(--card-bg);
-  color: #000;
-  border-radius: var(--radius);
-  padding: clamp(20px, 4vw, 35px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(255, 0, 0, 0.4);
+  background: aliceblue;
+  color: black;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
 .card h2 {
-  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
-  margin-bottom: 12px;
+  font-size: 1.3rem;
 }
 
-/* =========================
-   PRIX
-========================= */
+/* PRIX */
 .price {
+  margin: 15px 0;
+  padding: 8px 18px;
+  background: linear-gradient(90deg, #000, #ff0000);
+  color: white;
+  border-radius: 20px;
   display: inline-block;
-  font-size: clamp(22px, 3vw, 28px);
-  font-weight: bold;
-  color: var(--light);
-  margin: 18px 0;
-  padding: 10px 26px;
-  border-radius: 30px;
-  background: linear-gradient(90deg, var(--dark), var(--primary));
+  font-size: 1.3rem;
 }
 
-.price span {
-  font-size: 0.9rem;
-  font-weight: normal;
-}
-
-/* =========================
-   LISTE
-========================= */
+/* LISTE */
 .card ul {
   list-style: none;
-  margin: 22px 0;
+  margin: 20px 0;
   text-align: left;
 }
 
 .card ul li {
-  display: flex;
-  align-items: center;
-  font-size: clamp(0.9rem, 2vw, 1rem);
-  margin-bottom: 12px;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
 }
 
 .card ul li::before {
-  content: "✔";
-  color: #2ecc71;
-  margin-right: 10px;
+  content: "✔ ";
+  color: green;
   font-weight: bold;
 }
 
 .card ul li.unavailable::before {
-  content: "✘";
-  color: #e74c3c;
+  content: "✘ ";
+  color: red;
 }
 
-/* =========================
-   BOUTONS ACTION
-========================= */
+/* BOUTON */
 .but {
   width: 100%;
-  font-size: clamp(16px, 2vw, 18px);
-  font-weight: 600;
-  color: var(--light);
   padding: 12px;
-  border-radius: 30px;
-  background: linear-gradient(90deg, var(--dark), var(--primary));
+  font-size: 1rem;
+  background: linear-gradient(90deg, #000, #ff0000);
+  color: white;
   border: none;
+  border-radius: 25px;
   cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.but:hover {
-  transform: scale(1.04);
-  box-shadow: 0 0 18px rgba(255, 0, 0, 0.6);
 }
 
 /* =========================
-   MOBILE OPTIMIZATION
+   TABLETTE
 ========================= */
-@media (max-width: 480px) {
-  .page1 {
-    width: 100%;
+@media (min-width: 600px) {
+  body {
+    padding: 20px;
   }
 
-  .card {
-    margin: 0 auto;
-  }
-
-  .card ul {
-    text-align: center;
-  }
-
-  .card ul li {
-    justify-content: center;
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* =========================
-   TOUCH DEVICES
+   DESKTOP
 ========================= */
-@media (hover: none) {
-  .card:hover,
-  .but:hover,
-  .page1:hover {
-    transform: none;
-    box-shadow: none;
+@media (min-width: 992px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  h1 {
+    font-size: 2rem;
   }
 }
-
-
